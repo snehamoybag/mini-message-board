@@ -7,16 +7,26 @@
   </head>
   <body>
     <main>
-      <section><h2><%= title %></h2></section>
+      <section><h1><%= title %></h1></section>
       <ul>
         <% messages.forEach((message) => { %>
         <li>
-          <h3><%= message.user %></h3>
+          <h2><%= message.user %></h2>
+          <% if (message.text.length > 35) { %>
+          <p><%= message.text.slice(0, 35) %>...</p>
+          <% } else { %>
           <p><%= message.text %></p>
-          <p>on: <%= message.name %> (<%= message.added %>)</p>
+          <% } %>
+          <p>
+            <% const days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+            %> <%= days[message.added.getDay()] %> at <%=
+            message.added.getHours() %>:<%= message.added.getMinutes() %>
+          </p>
+          <p><a href="/messages/message/<%= message.id %>">Open</a></p>
         </li>
         <% }); %>
       </ul>
+      <p><a href="/new">Add a new message</a></p>
     </main>
   </body>
 </html>
