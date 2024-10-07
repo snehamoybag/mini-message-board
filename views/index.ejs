@@ -8,6 +8,7 @@
   <body>
     <main>
       <section><h1><%= title %></h1></section>
+      <p><a href="/new">Add a new message</a></p>
       <ul>
         <% messages.forEach((message) => { %>
         <li>
@@ -26,7 +27,6 @@
         </li>
         <% }); %>
       </ul>
-      <p><a href="/new">Add a new message</a></p>
     </main>
   </body>
 </html>
