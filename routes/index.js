@@ -29,12 +29,12 @@ router.get("/messages/message/:id", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
-  const { author, message } = req.body;
+  const { messageUser, messageText } = req.body;
 
   messages.push({
     id: messages[messages.length - 1].id + 1,
-    text: message,
-    user: author,
+    text: messageText,
+    user: messageUser,
     added: new Date(),
   });
 
