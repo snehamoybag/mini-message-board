@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
 router.get("/messages/message/:id", (req, res) => {
   res.render(
     "message",
-    messages.find((message) => message.id === Number(req.params.id))
+    messages.find((message) => message.id === Number(req.params.id)),
   );
 });
 

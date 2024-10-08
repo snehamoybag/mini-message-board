@@ -7,26 +7,28 @@
   </head>
   <body>
     <main>
-      <section><h1><%= title %></h1></section>
-      <p><a href="/new">Add a new message</a></p>
-      <ul>
-        <% messages.forEach((message) => { %>
-        <li>
-          <h2><%= message.user %></h2>
-          <% if (message.text.length > 35) { %>
-          <p><%= message.text.slice(0, 35) %>...</p>
-          <% } else { %>
-          <p><%= message.text %></p>
-          <% } %>
-          <p>
-            <% const days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
-            %> <%= days[message.added.getDay()] %> at <%=
-            message.added.getHours() %>:<%= message.added.getMinutes() %>
-          </p>
-          <p><a href="/messages/message/<%= message.id %>">Open</a></p>
-        </li>
-        <% }); %>
-      </ul>
+      <section>
+        <h1><%= title %></h1>
+        <p><a href="/new">Add a new message</a></p>
+        <ul>
+          <% messages.forEach((message) => { %>
+          <li>
+            <h2><%= message.user %></h2>
+            <% if (message.text.length > 35) { %>
+            <p><%= message.text.slice(0, 35) %>...</p>
+            <% } else { %>
+            <p><%= message.text %></p>
+            <% } %>
+            <p>
+              <% const days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri",
+              "Sat"]; %> <%= days[message.added.getDay()] %> at <%=
+              message.added.getHours() %>:<%= message.added.getMinutes() %>
+            </p>
+            <p><a href="/messages/message/<%= message.id %>">Open</a></p>
+          </li>
+          <% }); %>
+        </ul>
+      </section>
     </main>
   </body>
 </html>
