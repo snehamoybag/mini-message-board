@@ -20,9 +20,9 @@
             <p><%= message.text %></p>
             <% } %>
             <p>
-              <% const days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri",
-              "Sat"]; %> <%= days[message.added.getDay()] %> at <%=
-              message.added.getHours() %>:<%= message.added.getMinutes() %>
+              <% const days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"]; %>
+              <%= days[message.date.getDay()] %> at <%=
+              message.date.getHours() %>:<%= message.date.getMinutes() %>
             </p>
             <p><a href="/messages/message/<%= message.id %>">Open</a></p>
           </li>

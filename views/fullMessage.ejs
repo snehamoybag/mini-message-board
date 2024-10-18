@@ -7,9 +7,9 @@
   </head>
   <body>
     <main>
-      <h1>Message from <%= user %></h1>
-      <p><%= text %></p>
-      <p>on: <%= added %></p>
+      <h1>Message from <%= message.author %></h1>
+      <p><%= message.text %></p>
+      <p>on: <%= message.date %></p>
       <p><a href="/">Close</a></p>
     </main>
   </body>
